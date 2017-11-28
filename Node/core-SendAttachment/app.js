@@ -8,6 +8,7 @@ var Promise = require('bluebird');
 var url = require('url');
 var fs = require('fs');
 var util = require('util');
+var path = require('path')
 
 // Swagger client for Bot Connector API
 var connectorApiClient = new Swagger(
@@ -43,9 +44,9 @@ var bot = new builder.UniversalBot(connector, [
         var option = results.response ? results.response.entity : Inline;
         switch (option) {
             case Inline:
-                return sendInline(session, './images/small-image.png', 'image/png', 'BotFrameworkLogo.png');
+            return sendInline(session, path.resolve(__dirname, './images/small-image.png'), 'image/png', 'BotFrameworkLogo.png');
             case Upload:
-                return uploadFileAndSend(session, './images/big-image.png', 'image/png', 'BotFramework.png');
+            return uploadFileAndSend(session, path.resolve(__dirname, './images/big-image.png'), 'image/png', 'BotFramework.png');
             case External:
                 var url = 'https://docs.microsoft.com/en-us/bot-framework/media/how-it-works/architecture-resize.png';
                 return sendInternetUrl(session, url, 'image/png', 'BotFrameworkOverview.png');
@@ -61,6 +62,10 @@ var Options = [Inline, Upload, External];
 function sendInline(session, filePath, contentType, attachmentFileName) {
     fs.readFile(filePath, function (err, data) {
         if (err) {
+            console.log(err)
+            console.log(data)
+            console.log(__dirname);
+            console.log(path.dirname(__filename));
             return session.send('Oops. Error reading file.');
         }
 
@@ -83,6 +88,11 @@ function uploadFileAndSend(session, filePath, contentType, attachmentFileName) {
     // read file content and upload
     fs.readFile(filePath, function (err, data) {
         if (err) {
+            console.log(err)
+            console.log(data)
+            console.log(__dirname);
+            console.log(path.dirname(__filename));
+
             return session.send('Oops. Error reading file.');
         }
 
