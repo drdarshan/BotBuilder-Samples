@@ -1,12 +1,11 @@
 ## Overview
-This document describes 
 
 ## Prerequisites
  1. Install the Docker Community Edition client for your [platform](https://store.docker.com/search?offering=community&type=edition)
  1. Install the Bot Framework Emulator for your platform. Please ensure you install and setup NGrok as part of your emulator installation.
 
 ## Running Samples
-  1. To see the list of available samples in the Docker container, run 
+  1. To see the list of available samples in the Docker container, run: 
   ```sh
   docker run -it --rm -p 3978:3978 microsoft/botframework-samples-node
   ```
@@ -26,4 +25,4 @@ This document describes
   1. Some bots need keys for connecting to Cognitive Services. 
   
 ## Technical Details
-The ``DockerFile`` used to generate the image is located at [./Node/docker/Dockerfile].
+The ``DockerFile`` used to generate the image is located at (/Node/docker/Dockerfile).
