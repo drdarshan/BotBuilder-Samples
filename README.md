@@ -5,11 +5,10 @@ Bot Builder samples are organized into groups and designed to illustrate task-fo
     git clone https://github.com/Microsoft/BotBuilder-Samples.git
     cd BotBuilder-Samples
 
-We also provide a pre-built Docker container containing most of the samples. You can run a sample such as ``core-SendAttachment`` from the container using:
+We also provide a pre-built Docker container containing most of the samples. You can run a sample such as core-SendAttachment from the container using:
 
-``sh
     docker run -it --rm -p 3978:3978 microsoft/botbuilder-samples-node core-SendAttachment
-``
+
 See [Running on Docker](Docker.md) for more details.
 
 ## Core
