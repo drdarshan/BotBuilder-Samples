@@ -8,21 +8,27 @@
       ![Emulator screenshot](/images/emulator-2.png)
     
 
-## Running Samples
-To see the list of available samples in the Docker container, run: 
-  docker run -it --rm -p 3978:3978 microsoft/botframework-samples-node
-  
+## Running samples
+To see the list of available samples in the Docker container, run:
+```
+docker run -it --rm -p 3978:3978 microsoft/botframework-samples-node
+```
 To run a particular sample, for example ``core-SendAttachment`` run:
-  docker run -it --rm -p 3978:3978 microsoft/botframework-samples-node core-SendAttachment
-      
+```
+docker run -it --rm -p 3978:3978 microsoft/botframework-samples-node core-SendAttachment
+```   
 The bot will now be launched inside the Docker container.
   
-Connect the emulator to the bot using the url: http://localhost:3978/api/messages 
+Connect the emulator to the bot using the url: http://localhost:3978/api/messages
+
+To stop the bot, simply hit Control-C in the Docker window.
 
 ### Additional options
-  1. To set an application name and application key for the bot, pass them in via environment variables as follows:
-     docker run -it --rm -p 3978:3978 -e MICROSOFT_APP_ID=<app_id> -e MICROSOFT_APP_KEY=<app_key> microsoft/botframework-samples-node <sample_name>
-  1. Some bots need keys for connecting to Cognitive Services. 
+To set an application name and application key for the bot, pass them in via environment variables as follows:
+```
+docker run -it --rm -p 3978:3978 -e MICROSOFT_APP_ID=<app_id> -e MICROSOFT_APP_KEY=<app_key> microsoft/botframework-samples-node <sample_name>
+```
+Some bots need keys for connecting to Cognitive Services. 
   
 ## Technical details
 The Dockerfile used to generate the image is located at (/Node/docker/Dockerfile).To create the image from source, clone the Git repo using:
