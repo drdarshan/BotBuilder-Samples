@@ -1,8 +1,8 @@
-FROM node:8.9.1
+FROM node:8.9.1-alpine
 WORKDIR /app
 COPY docker/package*.json ./
-COPY docker/run_sample.py ./
 RUN npm install --only=production
+COPY docker/run_sample.js ./
 COPY . .
 EXPOSE 3978
-ENTRYPOINT ["python", "run_sample.py"]
+ENTRYPOINT ["node", "run_sample.js"]
