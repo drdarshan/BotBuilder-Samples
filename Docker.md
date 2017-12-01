@@ -47,7 +47,7 @@ The environment variables used to pass keys required for each of the samples bas
 
 
 ## Technical details
-The Dockerfile used to generate the image is located at here(/Node/docker/Dockerfile).To create the image from source, clone the Git repo using:
+The Dockerfile used to generate the image is located [here](/Node/docker/Dockerfile).To create the image from source, clone the Git repo using:
 ```
 git clone https://github.com/Microsoft/BotBuilder-Samples.git
 ```
